@@ -20,7 +20,7 @@ By ne0mesys
 
 ### For Windows
 
-***Requests** library is required in order to perform the whole masking part. In case you don't have it installed, you can find the instructions below for Windows users:
+***Requests*** library is required in order to perform the whole masking part. In case you don't have it installed, you can find the instructions below for Windows users:
 
 Open the command prompt and enter the following commands:
 
