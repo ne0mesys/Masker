@@ -25,25 +25,51 @@ function helpPanel(){
   echo -e "\n\n${green}[+] By ne0mesys${end}\n"
 }
 
-function starting(){
+function starting() {
   echo -ne "\n${yellow}[+]${end}${gray} Enter the${end}${yellow} real domain${end}${gray} (Ex. https://google.com): ${end}${cyan}" && read real
   echo -ne "\n${yellow}[+]${end}${gray} Enter the${end}${yellow} fake domain${end}${gray} (Ex. youtube.com): ${end}${cyan}" && read fake
   echo -ne "\n${yellow}[+]${end}${gray} Enter${end}${yellow} fake tags${end}${gray} (Ex. add-friend, account): ${end}${cyan}" && read tags
 
   tput civis
-  short_url=$(curl -s "https://da.gd/s?url=${real}")
 
-  if [[ "$short_url" == https://* ]]; then
-    path="https://${fake}-${tags}@${short_url/https:\/\/}"
-    tput cnorm 
-    echo -e "\n${blue}[+]${end}${gray} URL masked -->${end} ${blue}${path}${end}"
-    echo -e "\n\n${green}[+] By ne0mesys\n${end}"
-  else
+  declare -a short_urls
+  declare -a cmds=(
+    "curl -s 'https://da.gd/s?url=$real'"
+    "curl -s 'https://is.gd/create.php?format=simple&url=$real'"
+    "curl -s 'https://tinyurl.com/api-create.php?url=$real'"
+    "curl -s -X POST -d 'simple=true&url=$real' https://gg.gg"
+  )
+
+  for i in "${!cmds[@]}"; do
+    eval "${cmds[$i]}" > "/tmp/url_$i" &
+  done
+
+  # Espera máxima (fail-safe)
+  sleep 1.5
+
+  for i in "${!cmds[@]}"; do
+    if [ -s "/tmp/url_$i" ]; then
+      url=$(<"/tmp/url_$i")
+      [[ "$url" == https://* ]] && short_urls+=("$url")
+      rm -f "/tmp/url_$i"
+    fi
+  done
+
+  if [ ${#short_urls[@]} -eq 0 ]; then
     echo -e "\n\n${red}[!] No URL was masked!${end}\n"
     tput cnorm; exit 1
-  fi 
-}
+  fi
 
+  echo -e "\n${blue}[+]${end}${gray} Masked URLs:${end}\n"
+  for url in "${short_urls[@]}"; do
+    domain_path="${url#https://}"
+    masked="https://${fake}-${tags}@${domain_path}"
+    echo -e "\t${blue} ${masked}${end}"
+  done
+
+  echo -e "\n${green}[+] By ne0mesys${end}\n"
+  tput cnorm
+}
 
 # Ctrl + C 
 trap ctrl_c INT
