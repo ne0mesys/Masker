@@ -1,12 +1,12 @@
-# masker.py/sh by ne0mesys
+# 👻 Masker.py/sh by ne0mesys
 
 ***This script has been created by ne0mesys and serves as a penetration tester software that allows users to mask URLs behind fake domains. I hope you guys enjoy it ;)***
 
 ## Welcome
 This software allows pentesters to mask all type of URLs behind fake domains and fake tags. It is NOT a phishing generator, it is just a simple software that allows users to mask URLs. This software has as maximum 126 code lines as it is a very simple software that is able to server as an automation tool. This software can be used in two ways: 
 
-* **masker.py** (Graphical User Interface)
-* **masker.sh** (terminal)
+* **Masker.py** (Graphical User Interface)
+* **Masker.sh** (terminal)
 
 This tool is developed strictly for educational and ethical purposes. I DO NOT take any responsibility for the misuse of this tool.
 
@@ -49,7 +49,7 @@ sudo pacman -S curl
 
 ### For Windows
 
-You just need to download the ***masker.py*** file.
+You just need to download the ***Masker.py*** file.
 
 ### For Linux
 
@@ -75,25 +75,25 @@ cd Masker
 
 ### For Windows
 
-You just need to execute the ***masker.py*** file.
+You just need to execute the ***Masker.py*** file.
 
 ### For Arch Linux & Linux
 
 Once we are in the same folder of the software, we can proceed to enable its execution. We can do this with the following command:
 
 ```
-sudo chmod +x masker.sh
+sudo chmod +x Masker.sh
 ```
 
-The software includes the Shebang line, #!/bin/bash which allows the user to execute it directly. We can do this using the command ```./masker.sh```
+The software includes the Shebang line, #!/bin/bash which allows the user to execute it directly. We can do this using the command ```./Masker.sh```
 
 However, it would be necessary to have the script always in the same directory we are in. Therefore, I highly suggest to move a copy with execution permits to the $PATH so we use it as a command: ```masker```
 
 In order to do this perform the next commands in the terminal:
 
 ```
-sudo chmod +x masker.sh
-sudo mv /usr/local/bin/masker
+sudo chmod +x Masker.sh
+sudo mv Masker.sh /usr/local/bin/masker
 ```
 
 **Now you are able to use the script as a command in the terminal!**
