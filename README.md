@@ -3,7 +3,7 @@
 ***This script has been created by ne0mesys and serves as a penetration tester software that allows users to mask URLs behind fake domains. I hope you guys enjoy it ;)***
 
 ## Welcome
-This software allows pentesters to mask all type of URLs behind fake domains and fake tags. It is NOT a phishing generator, it is just a simple software that allows users to mask URLs. This software can be used in two ways: 
+This software allows pentesters to mask all type of URLs behind fake domains and fake tags. It is NOT a phishing generator, it is just a simple software that allows users to mask URLs. This software has as maximum 126 code lines as it is a very simple software that is able to server as an automation tool. This software can be used in two ways: 
 
 * **masker.py** (Graphical User Interface)
 * **masker.sh** (terminal)
