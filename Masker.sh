@@ -67,7 +67,7 @@ function starting() {
     echo -e "\t${blue} ${masked}${end}"
   done
 
-  echo -e "\n${green}[+] By ne0mesys${end}\n"
+  echo -e "\n\n${green}[+] By ne0mesys${end}\n"
   tput cnorm
 }
 
