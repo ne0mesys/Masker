@@ -13,7 +13,7 @@ This tool is developed strictly for educational and ethical purposes. I DO NOT t
 By ne0mesys
 
 <p align="center">
-  <img width="593" height="844" alt="masker" src="https://github.com/user-attachments/assets/a33b1348-b7c5-47a4-ae37-0c048f31c79a" />
+  <img width="400" height="600" alt="masker" src="https://github.com/user-attachments/assets/a33b1348-b7c5-47a4-ae37-0c048f31c79a" />
 </p>
 
 ## Requirements
