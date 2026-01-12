@@ -63,7 +63,7 @@ cd Masker
 
 ### For Arch Linux
 
-Here's a short documentation about how to install the script for Linux users:
+Here's a short documentation about how to install the script for Arch Linux users:
 
 ```
 sudo pacman -S git
